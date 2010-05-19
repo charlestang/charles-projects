@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <!--[if IE 7]>
-	<link rel="stylesheet" type="text/css" href="ie7.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css">
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
