@@ -11,33 +11,50 @@ Tags: blue, custom header, fixed width, two columns, widgets
 */
 
 
-
+html,body{height:100%;margin:0;padding:0;}
 /* Begin Typography & Colors */
 body {
 	font-size: 62.5%; /* Resets 1em to 10px */
 	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	background: #d5d6d7 url('images/indienationbg.jpg') repeat fixed;
 	color: #333;
 	text-align: center;
+	background:url("images/gradientbg.jpg") repeat-x scroll center top #989898;
+	line-height:160%;
+	
 	}
 
 #page {
+	background:url("images/bg.jpg") no-repeat scroll center center transparent;
 	text-align: left;
+	clear:left;
+	margin: 0 auto;
+	height:700px;
+	position:relative;
+	width:980px;
 	}
 
 #pagebody { 
-	background: url("images/indienationbodybg.png") repeat-y top; 
-	border: none; 
+	height:320px;
+	margin:0 auto;
+	overflow:auto;
+	padding:0;
+	width:920px;
 	}
 
 #header {
-	background:url('images/indienationheaderbg.png') no-repeat bottom center;
+	height:270px;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	padding:60px 0 0;
+	width:980px;
 	}
 
 #headerimg 	{
-	margin: 7px 9px 0;
-	height: 192px;
-	width: 740px;
+	height:200px;
+	margin:0;
+	padding-left:54px;
+	width:926px;
 	}
 
 #content {
@@ -76,8 +93,7 @@ border: 1px solid #C7C7C7;
 }
 
 #footer {
-	background:url('images/indienationfooterbg.png') no-repeat top;
-	border: none;
+
 	}
 
 small {
@@ -230,36 +246,7 @@ a:hover {
 
 
 /* Begin Structure */
-body {
-	margin: 0 0 20px 0;
-	padding: 0;
-	}
 
-#page {
-	margin: 0 auto;
-	padding: 0;
-	width: 950px;
-	}
-#pagebody {
-	width: 950px;
-	padding:0;
-	margin:0 auto;
-	overflow:auto;
-}
-
-#header {
-	margin: 0;
-	padding: 0;
-	height: 270px;
-	width: 950px;
-	}
-
-#headerimg {
-	margin: 0;
-	height: 200px;
-	width: 100%;
-	padding-left:40px;
-	}
 #headerimg input[type=text]{
 	border-color:#C7C7C7 #BCB7B4 #BCB7B4 #AFA9A4;
 	border-style:solid;
@@ -292,7 +279,7 @@ body {
 	
 .narrowcolumn {
 	float: left;
-	padding: 0 0 20px 40px;
+	padding: 0 0 20px 24px;
 	margin: 0px 0 0;
 	width: 695px;
 	}
@@ -422,13 +409,6 @@ a.nextpostslink{
 	margin-bottom:5px;
 	text-align:right;
 	width:267px;
-	}
-#footer {
-	padding: 0;
-	margin: 0 auto;
-	width: 950px;
-	clear: both;
-	height: 219px;
 	}
 
 #footer p {
