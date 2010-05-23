@@ -25,14 +25,57 @@ body {
 
 #page {
 	background:url("images/bg.jpg") no-repeat scroll center center transparent;
-	text-align: left;
 	clear:left;
-	margin: 0 auto;
-	height:700px;
+	height:720px;
+	margin:0 auto;
 	position:relative;
-	width:980px;
+	text-align:left;
+	width:1000px;
 	}
-
+#bg {
+	background-image:url("images/shadow.png");
+	height:720px;
+	left:0;
+	position:absolute;
+	top:0;
+	width:1000px;
+	z-index:-1;
+	}
+#mainmenu {
+	font-family:Georgia !important;
+	font-size:14px;
+	font-weight:normal;
+	height:0;
+	left:246px;
+	position:relative;
+	top:10px;
+	width:510px;
+	z-index:100;
+	}
+#mainmenu ul {
+	margin:0;
+	list-style:none outside none;
+	padding:0;
+	}
+#mainmenu li {
+	float:left;
+	margin:0;
+	padding:0;
+	}
+#mainmenu a {
+	border-top:6px solid #4D4D4D;
+	color:#000000;
+	display:block;
+	font-style:italic;
+	height:40px;
+	line-height:38px;
+	text-align:center;
+	text-indent:-999em;
+	width:102px;
+	}
+#mainmenu li.current-menu a,#mainmenu a:hover {
+	border-top-color:#0af;
+	}
 #pagebody { 
 	height:320px;
 	margin:0 auto;
@@ -46,15 +89,15 @@ body {
 	margin-bottom:0;
 	margin-left:0;
 	margin-right:0;
-	padding:60px 0 0;
-	width:980px;
+	padding:70px 0 0;
+	width:1000px;
 	}
 
 #headerimg 	{
 	height:200px;
 	margin:0;
-	padding-left:54px;
-	width:926px;
+	padding-left:64px;
+	width:925px;
 	}
 
 #content {
@@ -442,9 +485,10 @@ h2.pagetitle {
 
 #sidebar h2 {
 	background:url("images/widgettitle.png") no-repeat scroll right top transparent;
-	font-size:15px;
+	font-size:14px;
 	margin:5px 0 0;
 	padding:0;
+	text-align:center;
 	}
 #sidebar h2 span{
 	background:url("images/widgettitle.png") no-repeat scroll 0 0 transparent;
