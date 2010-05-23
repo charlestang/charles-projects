@@ -25,8 +25,16 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="page">
-
-
+<div id="bg"></div>
+<div id="mainmenu">
+  	<ul>
+  		<li><a href="#">Collections</a></li>
+  		<li><a href="#">Culture</a></li>
+  		<li><a href="#">Designers</a></li>
+  		<li><a href="#">About Us</a></li>
+  		<li class="last"><a href="#">CHECKOUT</a></li>
+  	</ul>
+</div>
 <div id="header" role="banner">
 	<div id="headerimg">
 		<h1><a href="<?php echo get_option('home'); ?>/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" height="36" width="158" /></a></h1>
