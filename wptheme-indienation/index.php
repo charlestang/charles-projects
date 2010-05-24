@@ -37,14 +37,14 @@ get_header(); ?>
 				
 				
 				?>
-				<div class="entry">
+				<div class="entry"><div class="blog-pic">
 					<a href="<?php the_permalink() ?>">
-					<?php if ($url == '') { ?>
+					<?php if ($url == '') { //width=695 height=182?>
 					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankpostpic.png" width="695" height="182"/>
 					<?php } else { ?>
-					<img src="<?php echo $url;?>" width="695" height="182"/>
+					<img src="<?php echo $url;?>"/>
 					<?php }?>
-					</a>
+					</a></div>
 					<?php the_excerpt(); ?>
 				</div>
 				

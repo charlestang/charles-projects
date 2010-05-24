@@ -168,7 +168,7 @@ h2.pagetitle {
 	}
 
 #sidebar h2 {
-	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	font-family: 'Times New Roman', Verdana, Sans-Serif;
 	font-size: 1.2em;
 	}
 
@@ -306,6 +306,13 @@ a:hover {
 	margin-right:4px;
 	height:197px;
 	}
+#headerimg div.feature-pic{
+	overflow:hidden;
+	height:138px;
+	}
+#headerimg div.feature-pic img{
+	margin-left:-25%;
+	}
 #headerimg div.feature-expert{
 	margin:6px 0 7px 0;
 	height:37px;
@@ -376,6 +383,20 @@ a.nextpostslink{
 	}
 .post .entry{
 	font-size:0.9em;
+	}
+div#slideshow{
+	height:185px;
+	overflow:hidden;
+	}
+div#slideshow img{
+	width:695px;
+	}
+div.entry div.blog-pic{
+	overflow:hidden;
+	height:182px;
+	}
+div.entry div.blog-pic img{
+	width:695px;
 	}
 .post hr {
 	display: block;
