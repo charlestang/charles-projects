@@ -71,14 +71,14 @@
 			//var_dump($attachments);
 		
 		?>
-		<div class="feature-post">
+		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured1->ID);?>">
 			<?php if($url==''){ ?>
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
 			<?php } else { ?>
-			<img src="<?php echo $url;?>" width="288" height="138">
+			<img src="<?php echo $url;?>">
 			<?php }?>
-			</a>
+			</a></div>
 			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured1->post_title;?></span> <?php echo in_excerpt($featured1->post_content);?></div>
 			<div class="read-more-link"><a href="<?php echo get_permalink($featured1->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
 		</div>
@@ -103,14 +103,14 @@
 		
 		
 		?>
-		<div class="feature-post">
+		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured2->ID);?>">
 			<?php if($url==''){ ?>
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
 			<?php } else { ?>
-			<img src="<?php echo $url;?>" width="288" height="138">
+			<img src="<?php echo $url;?>">
 			<?php }?>
-			</a>
+			</a></div>
 			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured2->post_title;?></span> <?php echo in_excerpt($featured2->post_content);?></div>
 			<div class="read-more-link"><a href="<?php echo get_permalink($featured2->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
 		</div>
@@ -135,14 +135,14 @@
 		
 		
 		?>
-		<div class="feature-post">
+		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured3->ID);?>">
 			<?php if($url==''){ ?>
 			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
 			<?php } else { ?>
-			<img src="<?php echo $url;?>" width="288" height="138">
+			<img src="<?php echo $url;?>">
 			<?php }?>
-			</a>
+			</a></div>
 			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured3->post_title;?></span> <?php echo in_excerpt($featured3->post_content);?></div>
 			<div class="read-more-link"><a href="<?php echo get_permalink($featured3->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
 		</div>
