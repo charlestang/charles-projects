@@ -45,7 +45,7 @@ get_header();
 				<div id="gallery">
 					<div id="slideshow">
 					<?php foreach ($imageurls as $imageurl) { // width="695" height="185" ?>
-						<img src="<?php echo $imageurl;?>"/>
+						<img src="<?php echo $imageurl;?>" alt=""/>
 					<?php }?>
 					</div>
 					<div class="clear"></div>

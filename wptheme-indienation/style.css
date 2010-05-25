@@ -2,7 +2,7 @@
 Theme Name: INDIE NATION
 Theme URI: http://wordpress.org/
 Description: A theme.
-Version: 1.0
+Version: 2.0
 Author: Indienation
 Author URI: http://www.indienation.com
 Tags: blue, custom header, fixed width, two columns, widgets
@@ -22,7 +22,13 @@ body {
 	line-height:160%;
 	
 	}
-
+#floater {
+  float:left;
+  height:50%;
+  margin-bottom:-360px;
+  position:relative;
+  width:1000px;
+  }
 #page {
 	background:url("images/bg.jpg") no-repeat scroll center center transparent;
 	clear:left;
@@ -41,41 +47,13 @@ body {
 	width:1000px;
 	z-index:-1;
 	}
-#mainmenu {
-	font-family:Georgia !important;
-	font-size:14px;
-	font-weight:normal;
-	height:0;
-	left:246px;
-	position:relative;
-	top:10px;
-	width:510px;
-	z-index:100;
-	}
-#mainmenu ul {
-	margin:0;
-	list-style:none outside none;
-	padding:0;
-	}
-#mainmenu li {
-	float:left;
-	margin:0;
-	padding:0;
-	}
-#mainmenu a {
-	border-top:6px solid #4D4D4D;
-	color:#000000;
-	display:block;
-	font-style:italic;
-	height:40px;
-	line-height:38px;
-	text-align:center;
-	text-indent:-999em;
-	width:102px;
-	}
-#mainmenu li.current-menu a,#mainmenu a:hover {
-	border-top-color:#0af;
-	}
+
+#mainmenu {font-family:Georgia!important;font-weight:normal;font-size:14px;height:70px;width:510px;position:relative;top:10px;left:246px;z-index:100;}
+#mainmenu ul {list-style:none;padding:0;margin:0;/*width:520px;margin:auto;height:45px;*/}
+#mainmenu li {float:left;margin:0;padding:0;}
+#mainmenu a {display:block;width:102px;height:40px;color:#000;font-style:italic;text-align:center;border-top:6px solid #4d4d4d;line-height:38px;text-indent:-999em;}
+#mainmenu li.current-menu a,#mainmenu a:hover {border-top-color:#0af;}
+
 #pagebody { 
 	height:320px;
 	margin:0 auto;
@@ -89,7 +67,7 @@ body {
 	margin-bottom:0;
 	margin-left:0;
 	margin-right:0;
-	padding:70px 0 0;
+	padding:0;
 	width:1000px;
 	}
 
@@ -290,7 +268,7 @@ a:hover {
 
 /* Begin Structure */
 
-#headerimg input[type=text]{
+input#s{
 	border-color:#C7C7C7 #BCB7B4 #BCB7B4 #AFA9A4;
 	border-style:solid;
 	border-width:1px;
@@ -309,16 +287,20 @@ a:hover {
 #headerimg div.feature-pic{
 	overflow:hidden;
 	height:138px;
+	width:288px;
+	text-align:center;
 	}
 #headerimg div.feature-pic img{
-	margin-left:-25%;
+  margin:0 auto;
+  height:138px;
 	}
 #headerimg div.feature-expert{
 	margin:6px 0 7px 0;
 	height:37px;
 	overflow: hidden;
 	}
-#headerimg .feature-post .read-more-link{
+#headerimg div.feature-expert strong{text-transform:uppercase;}
+#headerimg div.feature-post .read-more-link{
 	width:288px;
 	height:9px;
 	display:block;
@@ -385,18 +367,20 @@ a.nextpostslink{
 	font-size:0.9em;
 	}
 div#slideshow{
-	height:185px;
+/*	height:185px;*/
+  text-align:center;
 	overflow:hidden;
 	}
 div#slideshow img{
-	width:695px;
+	max-width:695px;
+	margin:0 auto;
 	}
 div.entry div.blog-pic{
 	overflow:hidden;
-	height:182px;
+/*	height:182px;*/
 	}
 div.entry div.blog-pic img{
-	width:695px;
+	max-width:695px;
 	}
 .post hr {
 	display: block;
@@ -449,7 +433,7 @@ div.entry div.blog-pic img{
 }
 
 #respond h3{
-	background:url("images/widgettitle.png") no-repeat scroll right top transparent;
+	background:url("images/titlehyphen.png") no-repeat scroll right top transparent;
 	font-size:15px;
 	height:15px;
 	line-height:15px;
@@ -457,7 +441,7 @@ div.entry div.blog-pic img{
 	width:192px;
 	}
 #respond h3 span{
-	background:url("images/widgettitle.png") no-repeat scroll 0 0 transparent;
+	background:url("images/titlehyphen.png") no-repeat scroll 0 0 transparent;
 	line-height:15px;
 	padding-left:32px;
 	}
@@ -505,11 +489,11 @@ h2.pagetitle {
 }
 
 #sidebar h2 {
-	background:url("images/widgettitle.png") no-repeat scroll right top transparent;
-	font-size:14px;
-	margin:5px 0 0;
-	padding:0;
+	background:url("images/widgettitle.png") no-repeat scroll 100% 50% transparent;
+	margin:0;
+	padding:0 26px;
 	text-align:center;
+	font:italic bold 18px/1 'times New Roman';
 	}
 #sidebar h2 span{
 	background:url("images/widgettitle.png") no-repeat scroll 0 0 transparent;
@@ -897,3 +881,4 @@ div.aligncenter {
 /* "Daisy, Daisy, give me your answer do. I'm half crazy all for the love of you.
 	It won't be a stylish marriage, I can't afford a carriage.
 	But you'll look sweet upon the seat of a bicycle built for two." */
+#recaptcha_widget_div{float:left}
