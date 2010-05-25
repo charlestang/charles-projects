@@ -16,6 +16,9 @@
 <!--[if IE 7]>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css">
 <![endif]-->
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css">
+<![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 
@@ -24,24 +27,25 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="floater"></div>
 <div id="page">
 <div id="bg"></div>
 <div id="mainmenu">
   	<ul>
   		<li><a href="#">Collections</a></li>
-  		<li><a href="#">Culture</a></li>
+  		<li class="current-menu"><a href="#">Culture</a></li>
   		<li><a href="#">Designers</a></li>
   		<li><a href="#">About Us</a></li>
   		<li class="last"><a href="#">CHECKOUT</a></li>
   	</ul>
 </div>
-<div id="header" role="banner">
+<div id="header">
 	<div id="headerimg">
-		<h1><a href="<?php echo get_option('home'); ?>/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" height="36" width="158" /></a></h1>
+		<h1><a href="<?php echo get_option('home'); ?>/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" height="36" width="158" alt="" /></a></h1>
 		<div class="description"><?php bloginfo('description'); ?></div>
-		<form action="<?php echo get_option('home'); ?>/" method="get" role="search">
+		<form action="<?php echo get_option('home'); ?>/" method="get">
 			<div><label for="s" class="screen-reader-text">Search for:</label>
-			<input type="text" id="s" name="s" value="">
+			<input type="text" id="s" name="s" value="" />
 			</div>
 		</form>
 		<div class="clear"></div>
@@ -74,13 +78,13 @@
 		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured1->ID);?>">
 			<?php if($url==''){ ?>
-			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138" alt=""/>
 			<?php } else { ?>
-			<img src="<?php echo $url;?>">
+			<img src="<?php echo $url;?>" alt=""/>
 			<?php }?>
 			</a></div>
-			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured1->post_title;?></span> <?php echo in_excerpt($featured1->post_content);?></div>
-			<div class="read-more-link"><a href="<?php echo get_permalink($featured1->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
+			<div class="feature-expert"><strong><?php echo $featured1->post_title;?></strong> <?php echo $featured1->post_excerpt;?></div>
+			<div class="read-more-link"><a href="<?php echo get_permalink($featured1->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png" alt=""/></a></div>
 		</div>
 		<?php 
 		
@@ -106,13 +110,13 @@
 		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured2->ID);?>">
 			<?php if($url==''){ ?>
-			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138" alt=""/>
 			<?php } else { ?>
-			<img src="<?php echo $url;?>">
+			<img src="<?php echo $url;?>" alt=""/>
 			<?php }?>
 			</a></div>
-			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured2->post_title;?></span> <?php echo in_excerpt($featured2->post_content);?></div>
-			<div class="read-more-link"><a href="<?php echo get_permalink($featured2->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
+			<div class="feature-expert"><strong><?php echo $featured2->post_title;?></strong> <?php echo $featured2->post_excerpt;?></div>
+			<div class="read-more-link"><a href="<?php echo get_permalink($featured2->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png" alt=""/></a></div>
 		</div>
 		<?php 
 		
@@ -138,13 +142,13 @@
 		<div class="feature-post"><div class="feature-pic">
 			<a href="<?php echo get_permalink($featured3->ID);?>">
 			<?php if($url==''){ ?>
-			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankfeaturepic.png" width="288" height="138" alt=""/>
 			<?php } else { ?>
-			<img src="<?php echo $url;?>">
+			<img src="<?php echo $url;?>" alt=""/>
 			<?php }?>
 			</a></div>
-			<div class="feature-expert"><span style="text-transform:uppercase;"><?php echo $featured3->post_title;?></span> <?php echo in_excerpt($featured3->post_content);?></div>
-			<div class="read-more-link"><a href="<?php echo get_permalink($featured3->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png"></a></div>
+			<div class="feature-expert"><strong><?php echo $featured3->post_title;?></strong> <?php echo $featured3->post_excerpt;?></div>
+			<div class="read-more-link"><a href="<?php echo get_permalink($featured3->ID);?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png" alt=""/></a></div>
 		</div>
 		<div class="clear"></div>
 	</div>
