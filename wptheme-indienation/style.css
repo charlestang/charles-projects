@@ -278,6 +278,7 @@ body {
 	}
 #headerimg div.feature-expert{
 	margin:6px 0 7px 0;
+	line-height:13px;
 	height:37px;
 	overflow: hidden;
 	}
@@ -465,6 +466,7 @@ h2.pagetitle {
 	font-size:15px;
 	margin:5px 0 0;
 	padding:0;
+	font:italic bold 18px/1 'times New Roman';
 	}
 #sidebar h2 span{
 	background:url("images/widgettitle.png") no-repeat scroll 0 0 transparent;
