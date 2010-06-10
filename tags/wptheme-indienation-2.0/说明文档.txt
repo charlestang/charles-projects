@@ -1,0 +1,15 @@
+已经完成的：
+1. 基础页面
+2. 文章页面的slideshow
+3. 代码清理
+4. featured posts功能
+5. 优化了部分IE6的显示效果
+6. 修正了一些小bug
+
+未完成的部分：
+
+需要的插件支持：
+
+1. share this （需要用户自己注册生成key）
+2. wp-recaptcha （需要用户用自己的域名生成key）
+3. wp-pagenavi（如果要PSD中相同效果，需要后台参数设定）
