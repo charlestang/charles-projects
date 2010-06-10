@@ -13,6 +13,12 @@
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie7.css">
+<![endif]-->
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie6.css">
+<![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 
