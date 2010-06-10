@@ -1,0 +1,18 @@
+已经完成的：
+1. 基础页面
+2. 文章页面的slideshow
+3. 代码清理
+4. featured posts功能
+
+未完成的部分：
+1 页面背景图片的问题
+5 浏览器兼容性调试
+  5.1 目前已知在IE7下面，顶部feature post的位置偏下，导致read more按钮不可见
+  5.2 在文章列表中，readmore位置离底部线距离变宽（IE7）
+  5.3 在IE6中较糟糕……
+
+需要的插件支持：
+
+1. share this （需要用户自己注册生成key）
+2. wp-recaptcha （需要用户用自己的域名生成key）
+3. wp-pagenavi（如果要PSD中相同效果，需要后台参数设定）
