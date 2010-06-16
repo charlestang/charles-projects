@@ -32,7 +32,7 @@ body {
 /*	background:url("images/bg.jpg") no-repeat scroll center center transparent;
 	clear:left;
 	height:720px;*/
-	margin:0 auto 20px;
+	margin:0 auto 60px;
 	position:relative;
 	text-align:left;
 	width:1000px;
@@ -892,3 +892,40 @@ div.aligncenter {
 	It won't be a stylish marriage, I can't afford a carriage.
 	But you'll look sweet upon the seat of a bicycle built for two." */
 #recaptcha_widget_div{float:left}
+
+#footer{
+    position:relative;
+}
+#footer .bottom{
+    position: absolute;
+    top:225px;
+    padding-left:25px;
+    font-size:13px;
+    font-family: Georgia,serifs;
+}
+#footer ul{
+    margin:0;
+    padding:0;
+    list-style-position:outside;
+    list-style-image: none;
+    list-style-type: none;
+}
+#footer ul li{
+    border-left:1px solid white;
+    float:left;
+    margin-right:10px;
+    padding-left:10px;
+}
+#footer ul li.first{
+    border-left:none;
+}
+#footer ul li a,#footer ul li a:hover{
+    color:white;
+    text-decoration:none;
+}
+div.bot-logo{
+    position:absolute;
+    right:10px;
+    top:210px;
+}
+
