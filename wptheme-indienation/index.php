@@ -5,7 +5,7 @@ get_header(); ?>
 
 <div id="pagebody">
 
-	<div id="content" class="narrowcolumn" role="main">
+	<div id="content" class="narrowcolumn">
 
 	<?php if (have_posts()) : ?>
 
@@ -37,18 +37,18 @@ get_header(); ?>
 				
 				
 				?>
-				<div class="entry">
+				<div class="entry"><div class="blog-pic">
 					<a href="<?php the_permalink() ?>">
-					<?php if ($url == '') { ?>
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankpostpic.png" width="695" height="182"/>
+					<?php if ($url == '') { //width=695 height=182?>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/images/blankpostpic.png" width="695" height="182" alt=""/>
 					<?php } else { ?>
-					<img src="<?php echo $url;?>" width="695" height="182"/>
+					<img src="<?php echo $url;?>" alt=""/>
 					<?php }?>
-					</a>
+					</a></div>
 					<?php the_excerpt(); ?>
 				</div>
 				
-				<div class="read-more-link"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png" /></a></div>
+				<div class="read-more-link"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/readmorelink.png" alt="" /></a></div>
 
 				<div class="postmetadata">
 					<span class="align-left"><?php the_tags(__('Tags:') . ' ', ' | ', ''); edit_post_link(__('Edit'), ' | ', ''); ?></span>
