@@ -3,7 +3,7 @@
 ?>
 
 <hr />
-<div id="footer" role="contentinfo">
+<div id="footer">
 <!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
 	<!--<p>
 		<?php printf(__('%1$s is proudly powered by %2$s'), get_bloginfo('name'),

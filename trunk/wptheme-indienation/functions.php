@@ -12,8 +12,8 @@ if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => '<div class="widgetbottom"></div></li>',
-		'before_title' => '<h2 class="widgettitle"><span>',
-		'after_title' => '</span></h2><div class="widgettop"></div>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2><div class="widgettop"></div>',
 	));
 }
 
@@ -80,15 +80,16 @@ function in_add_gallery_code(){
 	?>
 	
 	<script type="text/javascript">
+/* <![CDATA[ */
 	(function($){
 		$(document).ready(function(){
 			
 			$('#slideshow').after('<ul id="nav">').cycle({ 
 			    fx:     'fade', 
 			    speed:  'fast', 
-			    timeout: 0, 
+			    //timeout: 0, 
 			    pager:  '#nav', 
-			     
+			    height: 'auto',
 			    // callback fn that creates a thumbnail to use as pager anchor 
 			    pagerAnchorBuilder: function(idx, slide) { 
 			        return '<li><a href="#"><img src="' + slide.src + '" width="32" height="32" /></a></li>'; 
@@ -98,7 +99,7 @@ function in_add_gallery_code(){
 		});
 
 	})(jQuery);
-	
+/* ]]> */	
 	</script>
 	
 	<style type="text/css">
