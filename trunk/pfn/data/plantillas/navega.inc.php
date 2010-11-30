@@ -2,27 +2,27 @@
 /*******************************************************************************
 * data/plantillas/navega.inc.php
 *
-* plantilla para la visualización de la pantalla principal de navegación
+* plantilla para la visualizaciï¿½n de la pantalla principal de navegaciï¿½n
 *
 
-PHPfileNavigator versión 2.3.3
+PHPfileNavigator versiï¿½n 2.3.3
 
 Copyright (C) 2004-2005 Lito <lito@eordes.com>
 
 http://phpfilenavigator.litoweb.net/
 
 Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
-términos de la Licencia Pública General de GNU según es publicada por la Free
-Software Foundation, bien de la versión 2 de dicha Licencia o bien (según su
-elección) de cualquier versión posterior. 
+tï¿½rminos de la Licencia Pï¿½blica General de GNU segï¿½n es publicada por la Free
+Software Foundation, bien de la versiï¿½n 2 de dicha Licencia o bien (segï¿½n su
+elecciï¿½n) de cualquier versiï¿½n posterior. 
 
-Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
-GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la
-CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de
-GNU para más detalles. 
+Este programa se distribuye con la esperanza de que sea ï¿½til, pero SIN NINGUNA
+GARANTï¿½A, incluso sin la garantï¿½a MERCANTIL implï¿½cita o sin garantizar la
+CONVENIENCIA PARA UN PROPï¿½SITO PARTICULAR. Vï¿½ase la Licencia Pï¿½blica General de
+GNU para mï¿½s detalles. 
 
-Debería haber recibido una copia de la Licencia Pública General junto con este
-programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
+Deberï¿½a haber recibido una copia de la Licencia Pï¿½blica General junto con este
+programa. Si no ha sido asï¿½, escriba a la Free Software Foundation, Inc., en
 675 Mass Ave, Cambridge, MA 02139, EEUU. 
 *******************************************************************************/
 
@@ -129,7 +129,11 @@ function envia_escollidos (accion) {
 		<th><input type="checkbox" id="check_maestro" name="check_maestro" onclick="marca_desmarca_multiples();" class="checkbox" /></th>
 		<?php } ?>
 		<th><a href="<?php echo PFN_cambia_url(array('orde','pos','lista'),array('nome',(($pos=='ASC')?'DESC':'ASC'),$lista)); ?>"><?php echo $PFN_conf->t('nome'); ?></a></th>
-		<?php if ($PFN_conf->g('columnas','tipo')) { ?>
+		<?php if ($PFN_conf->g('columnas','from')) { ?>
+		<th><a href="<?php echo PFN_cambia_url(array('orde','pos','lista'),array('from',(($pos=='ASC')?'DESC':'ASC'),$lista)); ?>"><?php echo $PFN_conf->t('from'); ?></a></th>
+		<?php } if ($PFN_conf->g('columnas','to')) { ?>
+		<th><a href="<?php echo PFN_cambia_url(array('orde','pos','lista'),array('to',(($pos=='ASC')?'DESC':'ASC'),$lista)); ?>"><?php echo $PFN_conf->t('to'); ?></a></th>
+		<?php } if ($PFN_conf->g('columnas','tipo')) { ?>
 		<th><a href="<?php echo PFN_cambia_url(array('orde','pos','lista'),array('tipo',(($pos=='ASC')?'DESC':'ASC'),$lista)); ?>"><?php echo $PFN_conf->t('tipo'); ?></a></th>
 		<?php } if ($PFN_conf->g('columnas','tamano')) { ?>
 		<th><a href="<?php echo PFN_cambia_url(array('orde','pos','lista'),array('tamano',(($pos=='ASC')?'DESC':'ASC'),$lista)); ?>"><?php echo $PFN_conf->t('tamano'); ?></a></th>
@@ -148,8 +152,10 @@ function envia_escollidos (accion) {
 		<td>&nbsp;</td>
 		<?php } ?>
 		<?php
-		$colspan = 3;
-		$colspan -= $PFN_conf->g('columnas','tipo')?0:1;
+		$colspan = 5;
+		$colspan -= $PFN_conf->g('columnas','from')?0:1;
+		$colspan -= $PFN_conf->g('columnas','to')?0:1;
+                $colspan -= $PFN_conf->g('columnas','tipo')?0:1;
 		$colspan -= $PFN_conf->g('columnas','tamano')?0:1;
 		?>
 		<td class="tdnome" colspan="<?php echo $colspan; ?>">
@@ -216,6 +222,7 @@ function envia_escollidos (accion) {
 		if ($PFN_conf->g('inc','estado') && is_object($PFN_inc)) {
 			$PFN_inc->carga_datos($PFN_conf->g('raiz','path').$dir.'/'.$v.'/');
 			$txt = $PFN_inc->crea_listado('dir');
+                        list($f_from,$f_to) = $PFN_inc->get_from_and_to();
 		} else {
 			$txt = '';
 		}
@@ -235,8 +242,12 @@ function envia_escollidos (accion) {
 			<?php echo $v; ?></a>
 			<?php echo empty($txt)?'':('<br /><span style="font-weight: normal;">'.$txt.'</span>'); ?>
 		</td>
-		<?php if ($PFN_conf->g('columnas','tipo')) { ?>
-		<td>
+                <?php if ($PFN_conf->g('columnas','from')) { ?>
+                <td><?php echo $f_from; ?></td>
+		<?php } if ($PFN_conf->g('columnas','to')) { ?>
+                <td><?php echo $f_to; ?></td>
+                <?php } if ($PFN_conf->g('columnas','tipo')) { ?>
+                <td>
 			<?php
 			if ($PFN_conf->g('ver_subcontido')) {
 				echo ($haisubcontido > 0)?
@@ -333,6 +344,7 @@ function envia_escollidos (accion) {
 		if ($PFN_conf->g('inc','estado') && is_object($PFN_inc)) {
 			$PFN_inc->carga_datos($PFN_conf->g('raiz','path').$dir.'/'.$v);
 			$txt = $PFN_inc->crea_listado('arq');
+                        list($f_from,$f_to) = $PFN_inc->get_from_and_to();
 		} else {
 			$txt = '';
 		}
@@ -356,7 +368,11 @@ function envia_escollidos (accion) {
 			<?php echo implode('.', $partes); ?></a>
 			<?php echo empty($txt)?'':('<br />'.$txt); ?>
 		</td>
-		<?php if ($PFN_conf->g('columnas','tipo')) { ?>
+                <?php if ($PFN_conf->g('columnas','from')) { ?>
+		<td><?php echo $f_from; ?></td>
+		<?php } if ($PFN_conf->g('columnas','to')) { ?>
+		<td><?php echo $f_to; ?></td>
+		<?php } if ($PFN_conf->g('columnas','tipo')) { ?>
 		<td><?php echo empty($ext)?'&nbsp;':strtoupper($ext); ?></td>
 		<?php } if ($PFN_conf->g('columnas','tamano')) { ?>
 		<td><?php echo PFN_peso($cada['arq']['tamano'][$k]); ?></td>
