@@ -2,27 +2,27 @@
 /*******************************************************************************
 * instalar/include/paso_3.inc.php
 *
-* Tercer paso de la instalación
+* Tercer paso de la instalaciï¿½n
 *
 
-PHPfileNavigator versión 2.3.2
+PHPfileNavigator versiï¿½n 2.3.2
 
 Copyright (C) 2004-2005 Lito <lito@eordes.com>
 
 http://phpfilenavigator.litoweb.net/
 
 Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
-términos de la Licencia Pública General de GNU según es publicada por la Free
-Software Foundation, bien de la versión 2 de dicha Licencia o bien (según su
-elección) de cualquier versión posterior. 
+tï¿½rminos de la Licencia Pï¿½blica General de GNU segï¿½n es publicada por la Free
+Software Foundation, bien de la versiï¿½n 2 de dicha Licencia o bien (segï¿½n su
+elecciï¿½n) de cualquier versiï¿½n posterior. 
 
-Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
-GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la
-CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de
-GNU para más detalles. 
+Este programa se distribuye con la esperanza de que sea ï¿½til, pero SIN NINGUNA
+GARANTï¿½A, incluso sin la garantï¿½a MERCANTIL implï¿½cita o sin garantizar la
+CONVENIENCIA PARA UN PROPï¿½SITO PARTICULAR. Vï¿½ase la Licencia Pï¿½blica General de
+GNU para mï¿½s detalles. 
 
-Debería haber recibido una copia de la Licencia Pública General junto con este
-programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
+Deberï¿½a haber recibido una copia de la Licencia Pï¿½blica General junto con este
+programa. Si no ha sido asï¿½, escriba a la Free Software Foundation, Inc., en
 675 Mass Ave, Cambridge, MA 02139, EEUU. 
 *******************************************************************************/
 
@@ -44,7 +44,7 @@ if ($php_version > 406) {
 
 // Comprobacion de MySQL compilado y version > 4.0.0
 if (extension_loaded('mysql')) {
-	$mysql_version = split('[/.-]', mysql_get_client_info());
+	$mysql_version = split('[/.-]', str_replace('mysqlnd','',mysql_get_client_info()));
 	$mysql_version[1] = sprintf('%02d', $mysql_version[1]);
 	$mysql_version[2] = sprintf('%02d', $mysql_version[2]);
 	$mysql_version = intval($mysql_version[0].$mysql_version[1].$mysql_version[2]);
