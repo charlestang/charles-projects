@@ -2,27 +2,27 @@
 /*******************************************************************************
 * data/include/class_inc.php
 *
-* Procesa y devuelve los datos de los ficheros de información adicional
+* Procesa y devuelve los datos de los ficheros de informaciï¿½n adicional
 *
 
-PHPfileNavigator versión 2.3.0
+PHPfileNavigator versiï¿½n 2.3.0
 
 Copyright (C) 2004-2005 Lito <lito@eordes.com>
 
 http://phpfilenavigator.litoweb.net/
 
 Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
-términos de la Licencia Pública General de GNU según es publicada por la Free
-Software Foundation, bien de la versión 2 de dicha Licencia o bien (según su
-elección) de cualquier versión posterior. 
+tï¿½rminos de la Licencia Pï¿½blica General de GNU segï¿½n es publicada por la Free
+Software Foundation, bien de la versiï¿½n 2 de dicha Licencia o bien (segï¿½n su
+elecciï¿½n) de cualquier versiï¿½n posterior. 
 
-Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
-GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la
-CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de
-GNU para más detalles. 
+Este programa se distribuye con la esperanza de que sea ï¿½til, pero SIN NINGUNA
+GARANTï¿½A, incluso sin la garantï¿½a MERCANTIL implï¿½cita o sin garantizar la
+CONVENIENCIA PARA UN PROPï¿½SITO PARTICULAR. Vï¿½ase la Licencia Pï¿½blica General de
+GNU para mï¿½s detalles. 
 
-Debería haber recibido una copia de la Licencia Pública General junto con este
-programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
+Deberï¿½a haber recibido una copia de la Licencia Pï¿½blica General junto con este
+programa. Si no ha sido asï¿½, escriba a la Free Software Foundation, Inc., en
 675 Mass Ave, Cambridge, MA 02139, EEUU. 
 *******************************************************************************/
 
@@ -31,7 +31,7 @@ defined('OK') or die();
 /**
 * class PFN_INC
 *
-* clase para tratamiento de información adicional
+* clase para tratamiento de informaciï¿½n adicional
 * para ficheros y directorios
 */
 class PFN_INC {
@@ -45,7 +45,7 @@ class PFN_INC {
 	/**
 	* function PFN_INC (object $PFN_conf)
 	*
-	* recibe el objecto $PFN_conf con los parametros de configuración
+	* recibe el objecto $PFN_conf con los parametros de configuraciï¿½n
 	* y el objeto $PFN_vars por global para obtener variables
 	*/
 	function PFN_INC (&$PFN_conf) {
@@ -67,7 +67,7 @@ class PFN_INC {
 	/**
 	* function nome_inc (string $cal)
 	*
-	* devuelve el posible nombre del archivo de información adicional
+	* devuelve el posible nombre del archivo de informaciï¿½n adicional
 	*
 	* return string
 	*/
@@ -97,7 +97,7 @@ class PFN_INC {
 	/**
 	* function get_datos (void)
 	*
-	* Devuelve los datos cargados de un fichero de información adicional
+	* Devuelve los datos cargados de un fichero de informaciï¿½n adicional
 	*
 	* return array
 	*/
@@ -108,7 +108,7 @@ class PFN_INC {
 	/**
 	* function mais_datos (string $campo, string $valor, string $k2)
 	*
-	* añade mas campos o varía los ya cargados con carga_datos()
+	* aï¿½ade mas campos o varï¿½a los ya cargados con carga_datos()
 	*/
 	function mais_datos ($campo, $valor, $k2='') {
 		if (empty($k2)) {
@@ -121,7 +121,7 @@ class PFN_INC {
 	/**
 	* function valor (string $campo, string $k)
 	*
-	* devuelve el valor de un campo de información adicional
+	* devuelve el valor de un campo de informaciï¿½n adicional
 	*
 	* return string
 	*/
@@ -136,8 +136,8 @@ class PFN_INC {
 	/**
 	* function multiple (string $opc)
 	*
-	* configura la recepción de datos desde el formulario como
-	* múltiple (subida múltiple de ficheros) y añade una extensión
+	* configura la recepciï¿½n de datos desde el formulario como
+	* mï¿½ltiple (subida mï¿½ltiple de ficheros) y aï¿½ade una extensiï¿½n
 	* al nombre del campo que se recibe
 	*/
 	function multiple ($opc) {
@@ -147,7 +147,7 @@ class PFN_INC {
 	/**
 	* function crea_listado (string tipo, integet $limite)
 	*
-	* crea el texto para enseñar en la pantalla de navegación
+	* crea el texto para enseï¿½ar en la pantalla de navegaciï¿½n
 	* debajo del nombre del archivo a partir del estado (true/false)
 	* de la variable de $this->conf->g('inc',$cal,'listado')
 	*
@@ -165,17 +165,24 @@ class PFN_INC {
 		return substr($txt,0,-3);
 	}
 
+        function get_from_and_to () {
+            $conf = $this->conf->g('inc','comun');
+            $from = $this->datos[$conf[3]['nome']];
+            $to = $this->datos[$conf[4]['nome']];
+            return array($from,$to);
+        }
+
 	/**
 	* function crea_formulario (string $tipo)
 	*
 	* carga y devuelve un array con cada campo y valor
-	* del archivo de información adicional para crear
+	* del archivo de informaciï¿½n adicional para crear
 	* un formulario con los campos necesarios.
-	* simpre cargará los campos datos por $this->conf->g('inc','comun')
-	* y despues los necesarios según el parametro
+	* simpre cargarï¿½ los campos datos por $this->conf->g('inc','comun')
+	* y despues los necesarios segï¿½n el parametro
 	* $tipo ('dir','arq') para completar el formulario
 	*
-	* cuando se usan varios ficheros de configuración, solo se mostrarán
+	* cuando se usan varios ficheros de configuraciï¿½n, solo se mostrarï¿½n
 	* aquellos campos que estean relacionados con el actual
 	*
 	* return array
@@ -192,7 +199,7 @@ class PFN_INC {
 						$this->resultado[$i]['campo'] = '<label for="'.$v['nome']
 							.(strlen($this->multiple)?('_'.$this->multiple):'')
 							.'">'.$this->conf->t($v['nome']).'</label>';
-						// Llamada a la función que genera el html para textarea o text
+						// Llamada a la funciï¿½n que genera el html para textarea o text
 						$this->$v['tipo']($i,$v);
 						$i++;
 					}
@@ -250,7 +257,7 @@ class PFN_INC {
 	* function crea_descricion (string $tipo)
 	*
 	* crea una lista con los [campos] = valor obtenidos
-	* del fichero de información adicional, el parametro
+	* del fichero de informaciï¿½n adicional, el parametro
 	* $dir es usado para definir si se deben coger los datos
 	* de $this->conf->g('inc','dir') o $this->conf->g('inc','arq')
 	*
@@ -284,9 +291,9 @@ class PFN_INC {
 	* $cal: fichero original (no de datos adicionales)
 	* $tipo: formato de datos ('dir','inc')
 	*
-	* crea o modifica un fichero de información adicional pero manteniendo
+	* crea o modifica un fichero de informaciï¿½n adicional pero manteniendo
 	* los valores de otros campos ya existentes en caso de existir
-	* solo modificará los valores definidos por $this->conf->g('inc','comun')
+	* solo modificarï¿½ los valores definidos por $this->conf->g('inc','comun')
 	* y $this->conf->g('inc',$tipo)
 	* los valores necesarios del formulario los obtiene por POST
 	*
