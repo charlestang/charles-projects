@@ -118,7 +118,7 @@ return array(
 	// descargar : Fuerza la descarga del fichero en el disco duro
 	// enlace : Accede al fichero directamente igual que si escribe su url
 	// ver : Intenta abrir el fichero en el navegador y sino puede, lo
-	// abre con la aplicación por defecto para esa tipo de ficheros
+	// abre con la aplicaciï¿½n por defecto para esa tipo de ficheros
 	// Default option to download method when click in a file
 	// descargar : Force download file to hard disk
 	// enlace : Go directly to the URL's file
@@ -126,8 +126,8 @@ return array(
 	// application to this file type
 	'descarga_defecto' => 'ver',
 
-	// En la visualización de los permisos de ficheros y directorios,
-	// define si se enseña en formato numérico "775" = true
+	// En la visualizaciï¿½n de los permisos de ficheros y directorios,
+	// define si se enseï¿½a en formato numï¿½rico "775" = true
 	// o texto "rwxrwxr-x" = false
 	// In the file and folder permissions, define if show the numeric
 	// value "775" = true or text value "rwxrwxr-x" = false
@@ -135,12 +135,12 @@ return array(
 
 	// Permite previsualizar el contenido de un directorio en el
 	// listado pulsando el enlace de "DIR". PRECAUCION: esto consume
-	// más procesador, uso de disco y memoria
+	// mï¿½s procesador, uso de disco y memoria
 	// Allow preview the folder content in the list clicking the
 	// "DIR" link. CAUTION: It's comsume more CPU, disk and memory usage
 	'ver_subcontido' => true,
 
-	// Límite de peso para los ficheros enviados por correo como adjuntos
+	// Lï¿½mite de peso para los ficheros enviados por correo como adjuntos
 	// Size limit to file sended in an email like attachment
 	'limite_correo' => 1024*1024*5, // 5 Megas
 
@@ -164,30 +164,32 @@ return array(
 		'accions' => 'accions.php'
 	),
 
-	// Permite marcar si los usuarios de una raíz recibirán avisos al
+	// Permite marcar si los usuarios de una raï¿½z recibirï¿½n avisos al
 	// realizarse alguna de las siguientes acciones
 	// Allow decide if the users in a root will recive notify in the next acctions
 	'avisos' => array(
 		'subida' => true, // Cuando se sube un fichero / When a file is uploaded
 	),
 
-	// Tiempo durante el que se mantienen los registros estadísticos de usuarios
+	// Tiempo durante el que se mantienen los registros estadï¿½sticos de usuarios
 	// Time during is mantained the users stats
 	'logs_usuarios' => 1, // En Meses / In Mounths
 
-	// Columnas que se enseñaran en los listados
+	// Columnas que se enseï¿½aran en los listados
 	// Columns to show in the list
 	'columnas' => array (
 		'multiple' => true, // Allow multiple actions with files and folders
 		'tipo' => true, // Extension
+                'from' => true,
+                'to'   => true,
 		'tamano' => true, // Size
 		'data' => true, // Data
 		'permisos' => true, // Permissions
 		'accions' => true // Actions
 	),
 
-	// Permisos para la realizacion de acciones, o visulazación de
-	// las opciones del menú
+	// Permisos para la realizacion de acciones, o visulazaciï¿½n de
+	// las opciones del menï¿½
 	// Perms to do actions or view menu options
 	'permisos' => array(
 		'info' => true, // File/folder info
@@ -209,7 +211,7 @@ return array(
 		'subir_url' => true, // Upload URL
 		'extraer' => true, // Extract compressed file in server
 		'permisos' => true, // Cambio de permisos / Chmod change
-		'correo' => true, // Envío de ficheros por correo / Send a file in a mail
+		'correo' => true, // Envï¿½o de ficheros por correo / Send a file in a mail
 		'multiple_copiar' => true, // Multi copy
 		'multiple_mover' => true, // Multi move
 		'multiple_eliminar' => true, // Multi delete
@@ -217,10 +219,10 @@ return array(
 		'multiple_descargar' => false, // Multi download zip
 		'multiple_correo' => true, // Send multiple files in email
 		'buscador' => true, // Search
-		'arbore' => true, // Directories tree // Árbol de directorios
-		'ver_imaxes' => true, // Thumbnails preview // Previsualizar imágenes
-		'axuda' => true, // Help option / Opción de ayuda
-		'sair' => true, // Exit option / Opción de salir
+		'arbore' => true, // Directories tree // ï¿½rbol de directorios
+		'ver_imaxes' => true, // Thumbnails preview // Previsualizar imï¿½genes
+		'axuda' => true, // Help option / Opciï¿½n de ayuda
+		'sair' => true, // Exit option / Opciï¿½n de salir
 	),
 
 	// Configuracion de la ventana de informacion
@@ -282,6 +284,20 @@ return array(
 				'tipo' => 'hidden',
 				'nome' => 'usuario',
 				'listado' => false
+			),
+                        3 => array(
+				'tipo' => 'text',
+				'nome' => 'from',
+				'listado' => false,
+				'ancho' => 300,
+				'alto' => 0
+			),
+                        4 => array(
+				'tipo' => 'text',
+				'nome' => 'to',
+				'listado' => false,
+				'ancho' => 300,
+				'alto' => 0
 			),
 		),
 		// Informacion que se pide para directorios
