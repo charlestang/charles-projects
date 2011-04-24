@@ -23,7 +23,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>60,'maxlength'=>64)); ?>
+		<?php //echo $form->textField($model,'type',array('size'=>60,'maxlength'=>64)); ?>
+        <?php echo $form->dropDownList($model, 'type', $model->lookupTypes);?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 

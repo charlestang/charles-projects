@@ -11,19 +11,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'weeknum'); ?>
-		<?php echo $form->textField($model,'weeknum'); ?>
+		<?php echo $form->dropDownList($model,'weeknum',$weeks);?>
 		<?php echo $form->error($model,'weeknum'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'rtxname'); ?>
-		<?php echo $form->textField($model,'rtxname',array('size'=>60,'maxlength'=>64)); ?>
-		<?php echo $form->error($model,'rtxname'); ?>
+        <?php echo Yii::app()->user->id;?>
+		<?php echo $form->hiddenField($model,'rtxname',array('value'=> Yii::app()->user->id)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'project'); ?>
-		<?php echo $form->textField($model,'project'); ?>
+        <?php echo $form->dropDownList($model,'project',$projects);?>
 		<?php echo $form->error($model,'project'); ?>
 	</div>
 
@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cost'); ?>
-		<?php echo $form->textField($model,'cost'); ?>
+		<?php //echo $form->textField($model,'cost'); ?>
         <?php $this->widget('zii.widgets.jui.CJuiSliderInput', array(
             'model'=> $model,
             'attribute'=> 'cost',
@@ -50,7 +50,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'complete'); ?>
-		<?php echo $form->textField($model,'complete'); ?>
+		<?php //echo $form->textField($model,'complete'); ?>
         <?php $this->widget('zii.widgets.jui.CJuiSliderInput', array(
             'model'=> $model,
             'attribute'=> 'complete',
