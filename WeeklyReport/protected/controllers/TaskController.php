@@ -62,6 +62,27 @@ class TaskController extends Controller
 	public function actionCreate()
 	{
 		$model=new Task;
+        
+        $lookups = new CActiveDataProvider('Lookup', array(
+            'criteria' => array(
+                'order' => 'code desc',
+                'condition' => 'type = "project"',
+            ),
+        ));
+        
+        foreach ($lookups->data as $lookup) {
+            $projects[$lookup->code] = $lookup->name;
+        }
+        
+        $weeks = new CActiveDataProvider('Week', array(
+            'criteria' => array(
+                'order' => 'end desc',
+            ),
+        ));
+        
+        foreach ($weeks->data as $key => $value) {
+            $week_list[$value->id] = $value->start . '~~' . $value->end;
+        }
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -75,6 +96,8 @@ class TaskController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+            'projects'=> $projects,
+            'weeks' => $week_list,
 		));
 	}
 

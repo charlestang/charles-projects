@@ -11,6 +11,15 @@
  */
 class Lookup extends CActiveRecord
 {
+    const LU_TYPE_PROJECT = 'project';
+    const LU_TYPE_WORK_STATUS = 'work_status';
+    public function getLookupTypes()
+    {
+        return array(
+            self::LU_TYPE_PROJECT => '项目',
+            self::LU_TYPE_WORK_STATUS => '在职状态',
+        );
+    }
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Lookup the static model class
@@ -53,8 +62,7 @@ class Lookup extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array();
 	}
 
 	/**
