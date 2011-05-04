@@ -14,6 +14,7 @@
  */
 class User extends CActiveRecord
 {
+    public $password_repeat; //重复密码
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return User the static model class
@@ -39,10 +40,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('rtxid, password, create_time', 'required'),
+			array('rtxid, password, create_time, password_repeat', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('name, rtxid', 'length', 'max'=>32),
 			array('password', 'length', 'max'=>64),
+            array('password', 'compare'),
 			array('last_login_time', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -68,10 +70,11 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'rtxid' => 'Rtxid',
-			'password' => 'Password',
-			'status' => 'Status',
+			'name' => '中文姓名',
+			'rtxid' => 'RTX用户名',
+			'password' => '密码',
+            'password_repeat' => '重复密码',
+			'status' => '在职状态',
 			'create_time' => 'Create Time',
 			'last_login_time' => 'Last Login Time',
 		);
@@ -100,4 +103,15 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    
+    public function afterValidate()
+    {
+        $this->password = $this->encrypt($this->password);
+        parent::afterValidate();
+    }
+    
+    public function encrypt($str)
+    {
+        return md5($str);
+    }
 }
