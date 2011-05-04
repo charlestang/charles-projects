@@ -72,15 +72,15 @@ class Task extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rtxid' => 'Rtxid',
-			'task_name' => 'Task Name',
-			'project_id' => 'Project',
-			'complete' => 'Complete',
-			'cost' => 'Cost',
-			'continue' => 'Continue',
-			'week_number' => 'Week Number',
-			'year' => 'Year',
-			'start_time' => 'Start Time',
-			'end_time' => 'End Time',
+			'task_name' => '任务',
+			'project_id' => '所属项目',
+			'complete' => '完成进度',
+			'cost' => '花费时间',
+			'continue' => '后续跟进？',
+			'week_number' => '周次',
+			'year' => '年份',
+			'start_time' => '起始时间',
+			'end_time' => '结束时间',
 		);
 	}
 
@@ -111,4 +111,48 @@ class Task extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+    
+    public function getProjects()
+    {
+        $projects = Project::model()->findAll();
+        $projects_arr = array();
+        foreach ($projects as $key => $value){
+            $projects_arr[$value->id] = $value->project_name . ' ' . $value->version;
+        }
+        return $projects_arr;
+    }
+    
+    public function getWeekIDs()
+    {
+        $weeks = array();
+        for ($i = 1; $i <= 52; $i++){
+            $weeks[$i] = $i;
+        }
+        return $weeks;
+    }
+    
+    /**
+     * 计算一周的开始日期
+     * @return string 返回日期字符串Y-m-d格式
+     */
+    function weekstart()
+    {
+        $year = $this->year;
+        $week = $this->week_number;
+        
+        $referent_date = $year . '-07-01';
+        $referent_info = date('W w', strtotime($referent_date));
+        list($referent_week, $referent_week_day) = explode(' ', $referent_info);
+        if ($week > $referent_week) {
+            $days_offest = ($week - $referent_week) * 7 - $referent_week_day + 1;
+            $date = strtotime($referent_date) + $days_offest * 3600 * 24;
+        }
+        else {
+            $days_offest = ($referent_week - $week) * 7 + $referent_week_day - 1;
+            $date = strtotime($referent_date) - $days_offest * 3600 * 24;
+        }
+
+        return date('Y-m-d', $date);
+    }
+
 }
