@@ -160,4 +160,13 @@ $p =array(
 	'list' => '10109507010925991304,14318500857773196362'
 );
 //print_r($c->getTopicList($p));
-?>
+
+$p = array(
+    'num' => 5,
+    'start' => 0,
+    'n' => '',
+    'type' => 0,
+    
+);
+
+var_dump($c->getMyfans($p));
