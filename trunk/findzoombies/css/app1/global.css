@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+}
+.container {
+    width:415px;
+    margin: 0 auto;
+}
+a {
+    display:block;
+    text-align:right;
+    font-size:1.5em;
+}
+.first-line {
+    text-align: left;
+    font-size:1.2em;
+}
+.content {
+    text-align: left;
+    text-indent: 2em;
+}
+p.image img{
+    width:415px;
+}
+
+input.post-to{
+    width: 178px;
+    height: 36px;
+    background-image: url("../../img/button32.png");
+}
+
+div.form-container {
+    text-align: right;
+    
+}
+
+#weibo-content {
+    width: 415px;
+    clear: both;
+    heiht: 45px;
+}
+
+.follow, .follow a {
+    display:inline;
+    font-siz:0.8em;
+    margin-top: 10px;
+    
+}
