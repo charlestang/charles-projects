@@ -1,0 +1,164 @@
+/* CSS Document */
+/*CSS Reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, 
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { 
+        background: transparent;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+}
+
+.block{
+	color:#fff;
+	font-size: 36px;
+	line-height: 40px;
+	width:1024px;
+	height:525px;
+	background-color: #20222e;
+	margin-bottom: 15px;
+}
+
+.block .head{
+	height:104px;
+	background-image:url(../img/head.jpg);
+}
+
+.head .time{
+	font-size:23px;
+	left:914px;
+	position:relative;
+	top:52px;
+	line-height: 43px;
+}
+
+
+.stock{
+	margin: 24px 0;
+	width:420px;
+	height: 227px;
+	padding: 35px 0;
+	padding-left: 91px;
+	overflow:hidden;
+}
+
+
+.stock table tr{
+	height: 96px;
+	vertical-align: center;
+}
+.stock table th{
+	width: 190px;
+	text-align:left;
+	font-family:"微软雅黑","华文黑体",Arial;
+}
+.stock table td.value{
+	width: 185px;
+}
+
+.left{
+	float:left;
+	border-right:1px solid #bfae66;
+}
+
+.right{
+	float:right;
+}
+
+.block .body-container{
+	background-image:url(../img/body.gif);
+	height: 345px;
+	overflow:hidden;
+	position:relative;
+}
+
+.block .body{
+	/*background-image:url(../img/body.gif);*/
+	height: 345px;
+	overflow:hidden;
+}
+
+
+.block .foot{	
+	background-image:url(../img/foot.jpg);
+	height: 64px;
+	clear:both;
+}
+span.num {
+	font-size: 38px;
+}
+.bold{
+	font-weight:900;
+}
+span.unit{
+	float:right;
+	padding-right:20px;
+}
+
+.logo{
+	display:inline-block;
+	height:32px;
+	margin-right:10px;
+	position:relative;
+	width:31px;
+}
+
+.up {
+	background-image:url(../img/up.gif);
+}
+
+.down {
+	background-image:url(../img/down.gif);
+}
+
+.hide {
+	display:none;
+}
+.red {
+	color:red;
+}
+.green {
+	color:#01a648;
+}
+
+#sh,#sz,#hsi,#hscei,.rate-name{
+	color:#cdbb71;
+	font-size:38px;
+	font-weight: 900;	
+}
+#tab1{
+	position:relative;
+}
+#tips{
+	right:9px;
+	position:absolute;
+	bottom:4px;
+	font-size:20px;
+}
+#marquee{
+	font-size:25px;
+	line-height:64px;
+	overflow: hidden;
+	position:absolute;
+	width:1024px;
+	height: 64px;
+}
+#marquee ul{
+	list-style:none;
+	width:4000px;
+	height: 64px;
+}
+#marquee li{
+	float: left;
+	overflow:hidden;
+	background: url("../img/icon.jpg") no-repeat scroll 0 16px transparent;
+	padding-left: 46px;
+	margin-left: 28px;
+}

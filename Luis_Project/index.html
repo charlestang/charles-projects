@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Stock Datas</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://hq.sinajs.cn/list=s_sh000001,s_sz399001,hkHSI,hkHSCEI"></script>
+<script type="text/javascript" src="news.php"></script>
+</head>
+
+<body style="overflow:hidden">
+	<div class="block">
+    	<div class="head">
+        	<span class="time"></span>
+        </div>
+        <div class="body-container">
+        
+        <div id="tab1" class="body">
+        	<div class="stock left">
+            	<table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="rate-name">恒生指数</th>
+                        <td id="hsi" class="value"><span class="num bold">20,067</span></td>
+                    </tr>
+                    <tr>
+                        <th id="hsi-change-name" ><span class="logo up"></span>上涨</th>
+                        <td id="hsi-change" class="value"><span class="num">58</span><span class="unit">点</span></td>
+                    </tr>
+                    <tr>
+                        <th id="hsi-rate-name" ><span class="logo up"></span>涨幅</th>
+                        <td id="hsi-rate" class="value"><span class="num">0.2%</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="stock right">
+            	<table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="rate-name">国企指数</th>
+                        <td id="hscei" class="value"><span class="num bold">10,357</span></td>
+                    </tr>
+                    <tr>
+                        <th id="hscei-change-name"><span class="logo down"></span>下跌</th>
+                        <td id="hscei-change" class="value"><span class="num">25</span><span class="unit">点</span></td>
+                    </tr>
+                    <tr>
+                        <th id="hscei-rate-name"><span class="logo down"></span>跌幅</th>
+                        <td id="hscei-rate" class="value"><span class="num">0.32%</span></td>
+                    </tr>
+                </table>            
+            </div>
+            <div id="tips">延迟15分钟</div>
+        </div>
+        
+        <div id="tab2" class="body">
+        	<div class="stock left">
+            	<table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="rate-name">上证综指</th>
+                        <td id="sh" class="value"><span class="num bold">20,067</span></td>
+                    </tr>
+                    <tr>
+                        <th id="sh-change-name"><span class="logo up"></span>上涨</th>
+                        <td id="sh-change" class="value"><span class="num">58</span><span class="unit">点</span></td>
+                    </tr>
+                    <tr>
+                        <th id="sh-rate-name"><span class="logo up"></span>涨幅</th>
+                        <td id="sh-rate" class="value"><span class="num">0.2%</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="stock right">
+            	<table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="rate-name">深证成指</th>
+                        <td id="sz" class="value"><span class="num bold">10,357</span></td>
+                    </tr>
+                    <tr>
+                        <th id="sz-change-name"><span class="logo down"></span>下跌</th>
+                        <td id="sz-change" class="value"><span class="num">25</span><span class="unit">点</span></td>
+                    </tr>
+                    <tr>
+                        <th id="sz-rate-name" ><span class="logo down"></span>跌幅</th>
+                        <td id="sz-rate" class="value"><span class="num">0.32%</span></td>
+                    </tr>
+                </table>            
+            </div>
+        </div>
+ 		</div>
+ 
+ 
+        <div class="foot">
+        	<div id="marquee">
+            	<ul>
+                	<li>飛樂音響(6006abc5%股權</li>
+                    <li>【股東減持】def第一大股東減持270萬股</li>
+                    <li>【證券要聞】證監會趙ghi支持資本市場並購重組</li>
+                    <li>【證券要聞】解禁巨浪jkl7億限售股解禁</li>
+                    <li>【證券要聞】成思危︰隨十二五計劃的開局,明年應可逐步擺脫熊市進入牛市</li>
+                    <li>【證券要聞】央行副行長回應加息傳言︰將根據形勢變化決定</li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</body>
+<script type="text/javascript">
+//var hq_str_s_sh000001="上证指数,3129.497,42.558,1.38,2119558,27317838";
+//var hq_str_s_sz399001="深证成指,13733.357,137.625,1.01,134734056,18599422";
+//var hq_str_hkHSI="HANG SENG INDEX,恒生指数,24905.43,24535.63,24931.85,24732.90,24876.82,341.19,1.39,0.000,0.000,133805769,0,0.000,0.00,24905.43,19423.05,2010/11/05,16:01";
+$(function(){ //ready enclosure
+//load news
+$news_list = $('#marquee ul:first');
+$('li', $news_list).remove();
+for(i = 0; i < 6; i++) {
+	$('<li>' + news[i]+ '</li>').appendTo($news_list);
+}
+
+var total_width = 0;
+$('li', $news_list).each(
+    function(){
+        total_width += $(this).outerWidth();
+    }
+);
+$news_list.width(total_width * 2);
+
+for(i = 0; i < 6; i++) {
+	$('<li>' + news[i]+ '</li>').appendTo($news_list);
+}
+
+
+function scrollmove(){
+    var ele = $('#marquee').get(0);
+    var nowPos = ele.scrollLeft + 1;
+    if (nowPos >= total_width){
+        nowPos = 1;
+    }
+    ele.scrollLeft = nowPos;
+    setTimeout(scrollmove, 20);
+}
+scrollmove();
+
+
+var sh = hq_str_s_sh000001.split(',');
+var sz = hq_str_s_sz399001.split(',');
+var hsi = hq_str_hkHSI.split(',');
+var hscei = hq_str_hkHSCEI.split(',');
+
+function outputMoney(number) {
+    number=number.replace(/\,/g,"");
+    if (isNaN(number)||number=="") return "";
+    number = Math.round(  number*100) /100;
+    if(number<0)
+        return '-'+outputDollars(Math.floor(Math.abs(number)-0) + '') + outputCents(Math.abs(number) - 0);
+    else
+        return outputDollars(Math.floor(number-0) + '') + outputCents(number - 0);
+}
+function outputDollars(number)
+{
+    if (number.length<= 3)
+        return (number == '' ? '0' : number);
+    else
+    {
+        var mod = number.length%3;
+        var output = (mod == 0 ? '' : (number.substring(0,mod)));
+        for (i=0 ; i< Math.floor(number.length/3) ; i++)
+        {
+            if ((mod ==0) && (i ==0))
+                output+= number.substring(mod+3*i,mod+3*i+3);
+            else
+                output+= ',' + number.substring(mod+3*i,mod+3*i+3);
+        }
+        return (output);
+    }
+}
+function outputCents(amount)
+{
+    amount = Math.round( ( (amount) - Math.floor(amount) ) *100);
+    return (amount<10 ? '.0' + amount : '.' + amount);
+}
+
+function get_up_tip1(){
+	return '<span class="logo up"></span><span style="color:red">上涨</span>';
+}
+function get_up_tip2(){
+	return '<span class="logo up"></span><span style="color:red">涨幅</span>';
+}
+function get_down_tip1(){
+	return '<span class="logo down"></span><span style="color:green">下跌</span>';
+}
+function get_down_tip2(){
+	return '<span class="logo down"></span><span style="color:green">跌幅</span>';
+}
+
+//上证综指
+$('#sh span:first').text(outputMoney(sh[1]));
+if (sh[2] > 0){
+	$('#sh-change-name').html(get_up_tip1());
+	$('#sh-change span.num').text(new Number(sh[2]).toFixed(2));
+	$('#sh-change').parent().removeClass('green').next('tr').removeClass('green');
+	$('#sh-change').parent().addClass('red').next('tr').addClass('red');
+	$('#sh-rate-name').html(get_up_tip2());
+	$('#sh-rate span.num').text(sh[3]+'%');
+} else {
+	$('#sh-change-name').html(get_down_tip1());
+	$('#sh-change span.num').text(new Number(-sh[2]).toFixed(2));
+	$('#sh-change').parent().removeClass('red').next('tr').removeClass('red');
+	$('#sh-change').parent().addClass('green').next('tr').addClass('green');
+	$('#sh-rate-name').html(get_down_tip2());
+	$('#sh-rate span.num').text((-sh[3])+'%');
+}
+//深证成指
+$('#sz span:first').text(outputMoney(sz[1]));
+if (sz[2] > 0){
+	$('#sz-change-name').html(get_up_tip1());
+	$('#sz-change span.num').text(new Number(sz[2]).toFixed(2));
+	$('#sz-change').parent().removeClass('green').next('tr').removeClass('green');
+	$('#sz-change').parent().addClass('red').next('tr').addClass('red');
+	$('#sz-rate-name').html(get_up_tip2());
+	$('#sz-rate span.num').text(sz[3]+'%');
+} else {
+	$('#sz-change-name').html(get_down_tip1());
+	$('#sz-change span.num').text(new Number(-sz[2]).toFixed(2));
+	$('#sz-change').parent().removeClass('red').next('tr').removeClass('red');
+	$('#sz-change').parent().addClass('green').next('tr').addClass('green');
+	$('#sz-rate-name').html(get_down_tip2());
+	$('#sz-rate span.num').text((-sz[3])+'%');
+}
+//恒生指数
+$('#hsi span:first').text(outputMoney(hsi[6]));
+if (hsi[7] > 0){
+	$('#hsi-change-name').html(get_up_tip1());
+	$('#hsi-change span.num').text(new Number(hsi[7]).toFixed(2));
+	$('#hsi-change').parent().removeClass('green').next('tr').removeClass('green');
+	$('#hsi-change').parent().addClass('red').next('tr').addClass('red');
+	$('#hsi-rate-name').html(get_up_tip2());
+	$('#hsi-rate span.num').text(hsi[8]+'%');
+} else {
+	$('#hsi-change-name').html(get_down_tip1());
+	$('#hsi-change span.num').text(new Number(-hsi[7]).toFixed(2));
+	$('#hsi-change').parent().removeClass('red').next('tr').removeClass('red');
+	$('#hsi-change').parent().addClass('green').next('tr').addClass('green');
+	$('#hsi-rate-name').html(get_down_tip2());
+	$('#hsi-rate span.num').text((-hsi[8])+'%');
+}
+//国企指数
+$('#hscei span:first').text(outputMoney(hscei[6]));
+if (hscei[7] > 0){
+	$('#hscei-change-name').html(get_up_tip1());
+	$('#hscei-change span.num').text(new Number(hscei[7]).toFixed(2));
+	$('#hscei-change').parent().removeClass('green').next('tr').removeClass('green');
+	$('#hscei-change').parent().addClass('red').next('tr').addClass('red');
+	$('#hscei-rate-name').html(get_up_tip2());
+	$('#hscei-rate span.num').text(hscei[8]+'%');
+} else {
+	$('#hscei-change-name').html(get_down_tip1());
+	$('#hscei-change span.num').text(new Number(-hscei[7]).toFixed(2));
+	$('#hscei-change').parent().removeClass('red').next('tr').removeClass('red');
+	$('#hscei-change').parent().addClass('green').next('tr').addClass('green');
+	$('#hscei-rate-name').html(get_down_tip2());
+	$('#hscei-rate span.num').text((-hscei[8])+'%'); 
+} 
+	
+setInterval(function(){ 
+	$('.block .time').text(new Date().toTimeString().substr(0,8)); 
+}, 1000);
+
+setInterval(function(){
+	window.location.href = window.location.href;
+}, 123000);
+
+$tab1 = $('#tab1');
+$tab2 = $('#tab2');
+setInterval(function(){
+	if ($tab1.hasClass('hide')){
+		$tab1.removeClass('hide');
+		$tab1.animate(
+			{
+				height: 'toggle'
+			},
+			2000,
+			function(){
+				$('#tips').show();		
+			}			
+		);
+	} else {
+		$('#tips').hide();
+		$tab1.animate(
+			{
+				height: 'toggle'
+			},
+			2000,
+			function(){
+				$tab1.addClass('hide');
+			}			
+		);
+	}
+
+}, 10000);
+
+
+});
+</script>
+</html>
